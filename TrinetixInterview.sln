@@ -1,0 +1,126 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{6D6E6AD1-64EC-42C0-BF38-DCB21245FF6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{940C244E-38BB-4451-800E-01A55998237F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{E33FB0CB-11DF-44FB-BE83-428D2025F15F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationServices", "ApplicationServices", "{C960E551-2845-4CBD-9BB5-BC3B9E8284B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{203D8C98-0148-4F35-A62E-FE3DEE11BFDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrinetixInterview.DbFiller", "Utils\TrinetixInterview.DbFiller\TrinetixInterview.DbFiller.csproj", "{37696AC2-DB97-4FDA-A480-36967CD476C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrinetixInterview.Model", "Data\TrinetixInterview.Model\TrinetixInterview.Model.csproj", "{8C3D70FE-6538-4208-8715-2CA06EA23CAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrinetixInterview.ApplicationServices", "ApplicationServices\TrinetixInterview.ApplicationServices\TrinetixInterview.ApplicationServices.csproj", "{7DA80705-A2B1-4180-92D9-554F7DF65229}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrinetixInterview.Contracts", "Contracts\TrinetixInterview.Contracts\TrinetixInterview.Contracts.csproj", "{0E503E15-639C-48A4-AC9F-5CBBF036040D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9A3859F2-F221-439A-8520-43A2C0187697}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\dbcreate.sql = Scripts\dbcreate.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{E88F6BCE-2B55-4A62-830C-E6CBDAE926A6}"
+	ProjectSection(SolutionItems) = preProject
+		Configuration\connections.config = Configuration\connections.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrinetixInterview.ApplicationServices.Tests", "ApplicationServices\TrinetixInterview.ApplicationServices.Tests\TrinetixInterview.ApplicationServices.Tests.csproj", "{9212D139-CA63-4388-A96B-5E9FE2E169CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrinetixInterview.DbFiller.Services", "Utils\TrinetixInterview.DbFiller.Services\TrinetixInterview.DbFiller.Services.csproj", "{9058B326-775F-4B1F-B9EE-95EED651492C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrinetixInterview.DbFiller.Win", "Utils\TrinetixInterview.DbFiller.Win\TrinetixInterview.DbFiller.Win.csproj", "{B9D7DF5A-7CB5-4CCE-9989-B9979198CC32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backups", "Backups", "{D3A653F5-E3A8-4C11-89F9-85CDF2D6A826}"
+	ProjectSection(SolutionItems) = preProject
+		Backups\TrinetixInterview.bak = Backups\TrinetixInterview.bak
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://zenych.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Utils\\TrinetixInterview.DbFiller\\TrinetixInterview.DbFiller.csproj
+		SccProjectTopLevelParentUniqueName1 = TrinetixInterview.sln
+		SccProjectName1 = Utils/TrinetixInterview.DbFiller
+		SccLocalPath1 = Utils\\TrinetixInterview.DbFiller
+		SccProjectUniqueName2 = Data\\TrinetixInterview.Model\\TrinetixInterview.Model.csproj
+		SccProjectTopLevelParentUniqueName2 = TrinetixInterview.sln
+		SccProjectName2 = Data/TrinetixInterview.Model
+		SccLocalPath2 = Data\\TrinetixInterview.Model
+		SccProjectUniqueName3 = ApplicationServices\\TrinetixInterview.ApplicationServices\\TrinetixInterview.ApplicationServices.csproj
+		SccProjectTopLevelParentUniqueName3 = TrinetixInterview.sln
+		SccProjectName3 = ApplicationServices/TrinetixInterview.ApplicationServices
+		SccLocalPath3 = ApplicationServices\\TrinetixInterview.ApplicationServices
+		SccProjectUniqueName4 = Contracts\\TrinetixInterview.Contracts\\TrinetixInterview.Contracts.csproj
+		SccProjectTopLevelParentUniqueName4 = TrinetixInterview.sln
+		SccProjectName4 = Contracts/TrinetixInterview.Contracts
+		SccLocalPath4 = Contracts\\TrinetixInterview.Contracts
+		SccProjectUniqueName5 = ApplicationServices\\TrinetixInterview.ApplicationServices.Tests\\TrinetixInterview.ApplicationServices.Tests.csproj
+		SccProjectTopLevelParentUniqueName5 = TrinetixInterview.sln
+		SccProjectName5 = ApplicationServices/TrinetixInterview.ApplicationServices.Tests
+		SccLocalPath5 = ApplicationServices\\TrinetixInterview.ApplicationServices.Tests
+		SccProjectUniqueName6 = Utils\\TrinetixInterview.DbFiller.Services\\TrinetixInterview.DbFiller.Services.csproj
+		SccProjectTopLevelParentUniqueName6 = TrinetixInterview.sln
+		SccProjectName6 = Utils/TrinetixInterview.DbFiller.Services
+		SccLocalPath6 = Utils\\TrinetixInterview.DbFiller.Services
+		SccProjectUniqueName7 = Utils\\TrinetixInterview.DbFiller.Win\\TrinetixInterview.DbFiller.Win.csproj
+		SccProjectTopLevelParentUniqueName7 = TrinetixInterview.sln
+		SccProjectName7 = Utils/TrinetixInterview.DbFiller.Win
+		SccLocalPath7 = Utils\\TrinetixInterview.DbFiller.Win
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37696AC2-DB97-4FDA-A480-36967CD476C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37696AC2-DB97-4FDA-A480-36967CD476C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37696AC2-DB97-4FDA-A480-36967CD476C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37696AC2-DB97-4FDA-A480-36967CD476C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C3D70FE-6538-4208-8715-2CA06EA23CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C3D70FE-6538-4208-8715-2CA06EA23CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C3D70FE-6538-4208-8715-2CA06EA23CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C3D70FE-6538-4208-8715-2CA06EA23CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DA80705-A2B1-4180-92D9-554F7DF65229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DA80705-A2B1-4180-92D9-554F7DF65229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DA80705-A2B1-4180-92D9-554F7DF65229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DA80705-A2B1-4180-92D9-554F7DF65229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E503E15-639C-48A4-AC9F-5CBBF036040D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E503E15-639C-48A4-AC9F-5CBBF036040D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E503E15-639C-48A4-AC9F-5CBBF036040D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E503E15-639C-48A4-AC9F-5CBBF036040D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9212D139-CA63-4388-A96B-5E9FE2E169CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9212D139-CA63-4388-A96B-5E9FE2E169CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9212D139-CA63-4388-A96B-5E9FE2E169CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9212D139-CA63-4388-A96B-5E9FE2E169CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9058B326-775F-4B1F-B9EE-95EED651492C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9058B326-775F-4B1F-B9EE-95EED651492C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9058B326-775F-4B1F-B9EE-95EED651492C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9058B326-775F-4B1F-B9EE-95EED651492C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9D7DF5A-7CB5-4CCE-9989-B9979198CC32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9D7DF5A-7CB5-4CCE-9989-B9979198CC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9D7DF5A-7CB5-4CCE-9989-B9979198CC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9D7DF5A-7CB5-4CCE-9989-B9979198CC32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0E503E15-639C-48A4-AC9F-5CBBF036040D} = {6D6E6AD1-64EC-42C0-BF38-DCB21245FF6E}
+		{8C3D70FE-6538-4208-8715-2CA06EA23CAF} = {E33FB0CB-11DF-44FB-BE83-428D2025F15F}
+		{7DA80705-A2B1-4180-92D9-554F7DF65229} = {C960E551-2845-4CBD-9BB5-BC3B9E8284B3}
+		{9212D139-CA63-4388-A96B-5E9FE2E169CA} = {C960E551-2845-4CBD-9BB5-BC3B9E8284B3}
+		{37696AC2-DB97-4FDA-A480-36967CD476C1} = {203D8C98-0148-4F35-A62E-FE3DEE11BFDD}
+		{9058B326-775F-4B1F-B9EE-95EED651492C} = {203D8C98-0148-4F35-A62E-FE3DEE11BFDD}
+		{B9D7DF5A-7CB5-4CCE-9989-B9979198CC32} = {203D8C98-0148-4F35-A62E-FE3DEE11BFDD}
+	EndGlobalSection
+EndGlobal

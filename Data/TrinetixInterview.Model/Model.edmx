@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TrinetixInterviewModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FileNames">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FilePaths">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullPath" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Locations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WordId" Type="bigint" Nullable="false" />
+          <Property Name="FileNameId" Type="bigint" Nullable="false" />
+          <Property Name="FilePathId" Type="bigint" Nullable="false" />
+          <Property Name="Row" Type="bigint" Nullable="false" />
+          <Property Name="Column" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Words">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Location_File">
+          <End Role="FileNames" Type="Self.FileNames" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Locations" Type="Self.Locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FileNames">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="FileNameId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Path">
+          <End Role="FilePaths" Type="Self.FilePaths" Multiplicity="1" />
+          <End Role="Locations" Type="Self.Locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FilePaths">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="FilePathId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Word">
+          <End Role="Words" Type="Self.Words" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Locations" Type="Self.Locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Words">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="WordId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TrinetixInterviewModelStoreContainer">
+          <EntitySet Name="FileNames" EntityType="Self.FileNames" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FilePaths" EntityType="Self.FilePaths" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Words" EntityType="Self.Words" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Location_File" Association="Self.FK_Location_File">
+            <End Role="FileNames" EntitySet="FileNames" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Path" Association="Self.FK_Location_Path">
+            <End Role="FilePaths" EntitySet="FilePaths" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Word" Association="Self.FK_Location_Word">
+            <End Role="Words" EntitySet="Words" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TrinetixInterviewModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TrinetixInterviewEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FileNames" EntityType="TrinetixInterviewModel.FileName" />
+          <EntitySet Name="Words" EntityType="TrinetixInterviewModel.Word" />
+          <EntitySet Name="FilePaths" EntityType="TrinetixInterviewModel.FilePath" />
+          <EntitySet Name="Locations" EntityType="TrinetixInterviewModel.Location" />
+          <AssociationSet Name="FK_Location_File" Association="TrinetixInterviewModel.FK_Location_File">
+            <End Role="FileName" EntitySet="FileNames" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Path" Association="TrinetixInterviewModel.FK_Location_Path">
+            <End Role="FilePath" EntitySet="FilePaths" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Word" Association="TrinetixInterviewModel.FK_Location_Word">
+            <End Role="Word" EntitySet="Words" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="FileName">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Locations" Relationship="TrinetixInterviewModel.FK_Location_File" FromRole="FileName" ToRole="Location" />
+          </EntityType>
+        <EntityType Name="Word">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Locations" Relationship="TrinetixInterviewModel.FK_Location_Word" FromRole="Word" ToRole="Location" />
+        </EntityType>
+        <EntityType Name="FilePath">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullPath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Locations" Relationship="TrinetixInterviewModel.FK_Location_Path" FromRole="FilePath" ToRole="Location" />
+          </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WordId" Type="Int64" Nullable="false" />
+          <Property Name="FileNameId" Type="Int64" Nullable="false" />
+          <Property Name="FilePathId" Type="Int64" Nullable="false" />
+          <Property Name="Row" Type="Int64" Nullable="false" />
+          <Property Name="Column" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="FileName" Relationship="TrinetixInterviewModel.FK_Location_File" FromRole="Location" ToRole="FileName" />
+          <NavigationProperty Name="FilePath" Relationship="TrinetixInterviewModel.FK_Location_Path" FromRole="Location" ToRole="FilePath" />
+          <NavigationProperty Name="Word" Relationship="TrinetixInterviewModel.FK_Location_Word" FromRole="Location" ToRole="Word" />
+        </EntityType>
+        <Association Name="FK_Location_File">
+          <End Type="TrinetixInterviewModel.FileName" Role="FileName" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="TrinetixInterviewModel.Location" Role="Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FileName">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="FileNameId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Path">
+          <End Type="TrinetixInterviewModel.FilePath" Role="FilePath" Multiplicity="1" />
+          <End Type="TrinetixInterviewModel.Location" Role="Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FilePath">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="FilePathId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Word">
+          <End Type="TrinetixInterviewModel.Word" Role="Word" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="TrinetixInterviewModel.Location" Role="Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Word">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="WordId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TrinetixInterviewModelStoreContainer" CdmEntityContainer="TrinetixInterviewEntities">
+          <EntitySetMapping Name="FileNames">
+            <EntityTypeMapping TypeName="TrinetixInterviewModel.FileName">
+              <MappingFragment StoreEntitySet="FileNames">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Words">
+            <EntityTypeMapping TypeName="TrinetixInterviewModel.Word">
+              <MappingFragment StoreEntitySet="Words">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilePaths">
+            <EntityTypeMapping TypeName="TrinetixInterviewModel.FilePath">
+              <MappingFragment StoreEntitySet="FilePaths">
+                <ScalarProperty Name="FullPath" ColumnName="FullPath" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="TrinetixInterviewModel.Location">
+              <MappingFragment StoreEntitySet="Locations">
+                <ScalarProperty Name="Column" ColumnName="Column" />
+                <ScalarProperty Name="Row" ColumnName="Row" />
+                <ScalarProperty Name="FilePathId" ColumnName="FilePathId" />
+                <ScalarProperty Name="FileNameId" ColumnName="FileNameId" />
+                <ScalarProperty Name="WordId" ColumnName="WordId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
